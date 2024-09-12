@@ -1,26 +1,33 @@
 package br.com.aula_poo.primeira_lista;
-import java.util.Scanner;
-//tudo está dentro de uma classe Yuri!!!
-public class SegundoExercicio {
-	public static void main(String[] args) {
-		//declare as variaveis Yuri!!!
-		Scanner sc = new Scanner(System.in);//INSTANCIA YURI, LEMBRA DISSO ~.~
-		int somaidd = 0;
-		int numpessoas = 5;
-		
-		//um lacinho pra simplificar
-		for (int i = 1 ; i <=numpessoas; i++) {
-			System.out.print("Qual a idade do colega " + i + "?: ");
-			int idade = sc.nextInt();
-			somaidd += idade;
-			
-		}
-		System.out.print("Qual é a minha idade?: ");
-        int suaIdade = sc.nextInt();
-        somaidd += suaIdade;
-		
-		System.out.print("O tempo de vida dos meus colegas é de " + somaidd);
-		sc.close();
-	}
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.logging.Logger;
+
+public class SegundoExercicio {
+    private static final Logger log = Logger.getLogger(SegundoExercicio.class.getName());
+    public static void main(String[] args) {
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+        int somaIdades = 0;
+        int numeroPessoas = 5;
+
+        try {
+            for (int i = 1; i <= numeroPessoas; i++) {
+                log.info("Bota aqui a idade do amiguinho " + i + ": ");
+                int idade = Integer.parseInt(read.readLine());
+                somaIdades += idade;
+            }
+            log.info("Agora bota aqui a sua idade: ");
+            int suaIdade = Integer.parseInt(read.readLine());
+            somaIdades += suaIdade;
+            log.info("A soma da sua idade com a dos amiguinhos é: " + somaIdades);
+        }
+        catch (IOException e) {
+            log.severe("????" + e.getMessage());
+        }
+        catch (NumberFormatException e) {
+            log.severe("idade invalida");
+        }
+    }
 }
