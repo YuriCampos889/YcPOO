@@ -1,0 +1,6 @@
+Pessoa;1;Phoebe Bridge;Reino Unido;39
+Pessoa;2;Andy Samberg;Estados Unidos;46
+Pessoa;3;Steve Carell;Estados Unidos;62
+Serie;1;Fleabag;2016;12;1
+Serie;2;Brooklynn Nine-Nine;2013;153;2
+Serie;3;The Office;2005;201;3

@@ -1,0 +1,19 @@
+Relatório de Pessoas:
+▐████████████████████████████████████████ 
+	ID: 1	NOME: Phoebe Bridge		
+	NACIONALIDADE: Reino Unido	
+	IDADE: 39				
+▐████████████████████████████████████████
+ 
+▐████████████████████████████████████████ 
+	ID: 2	NOME: Andy Samberg		
+	NACIONALIDADE: Estados Unidos	
+	IDADE: 46				
+▐████████████████████████████████████████
+ 
+▐████████████████████████████████████████ 
+	ID: 3	NOME: Steve Carell		
+	NACIONALIDADE: Estados Unidos	
+	IDADE: 62				
+▐████████████████████████████████████████
+ 
