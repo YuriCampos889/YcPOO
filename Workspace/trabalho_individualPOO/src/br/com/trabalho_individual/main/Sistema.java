@@ -1,11 +1,18 @@
 package br.com.trabalho_individual.main;
 
-import br.com.trabalho_individual.main.Menu;
+import br.com.trabalho_individual.entidade.Pessoa;
+import br.com.trabalho_individual.entidade.Serie;
+import java.util.ArrayList;
+import java.util.List;
 
-//main
 public class Sistema {
     public static void main(String[] args) {
-        Menu menu = new Menu();
+        List<Pessoa> pessoas = new ArrayList<>();
+        List<Serie> series = new ArrayList<>();
+
+
+        Menu menu = new Menu(pessoas, series);
+        //menu
         menu.exibirMenu();
     }
 }

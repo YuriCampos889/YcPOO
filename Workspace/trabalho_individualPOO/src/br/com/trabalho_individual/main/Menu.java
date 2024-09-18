@@ -5,20 +5,23 @@ import br.com.trabalho_individual.entidade.Serie;
 import br.com.trabalho_individual.io.Leitor;
 import br.com.trabalho_individual.io.Relatorio;
 import br.com.trabalho_individual.utils.Util;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class Menu {
-    private static final Logger log = Util.setupLogger(); //log do util
+    private static final Logger log = Util.setupLogger();
     private static final Scanner sc = new Scanner(System.in);
-    //list p pessoa e serie
-    private List<Pessoa> pessoas = new ArrayList<>();
-    private List<Serie> series = new ArrayList<>();
+
+    private List<Pessoa> pessoas;
+    private List<Serie> series;
+
+    public Menu(List<Pessoa> pessoas, List<Serie> series) {
+        this.pessoas = pessoas;
+        this.series = series;
+    }
 
     public void exibirMenu() {
-        //TXT
         String caminhoArquivo = "temp/dados.txt";
         carregarDados(caminhoArquivo);
 
@@ -58,12 +61,10 @@ public class Menu {
 
         switch (opcao) {
             case 1:
-                //pessoa
                 String conteudoRelatorioPessoa = gerarRelatorioPessoa();
                 Relatorio.gerarRelatorioTela(conteudoRelatorioPessoa);
                 break;
             case 2:
-                //serie
                 String conteudoRelatorioSerie = gerarRelatorioSerie();
                 Relatorio.gerarRelatorioTela(conteudoRelatorioSerie);
                 break;
@@ -87,20 +88,18 @@ public class Menu {
         int opcao = sc.nextInt();
 
         switch (opcao) {
-            case 1:
-                //pessoa impressa
-                String conteudoRelatorioPessoaImpresso = gerarRelatorioPessoa();
-                Relatorio.gerarRelatorioImpresso("temp/relatorio1_pessoa.txt", conteudoRelatorioPessoaImpresso);
-                break;
-            case 2:
-                //serie impressa
-                String conteudoRelatorioSerieImpresso = gerarRelatorioSerie();
-                Relatorio.gerarRelatorioImpresso("temp/relatorio2_serie.txt", conteudoRelatorioSerieImpresso);
-                break;
-            case 3:
-                return;
+        case 1:
+        	String conteudoRelatorioPessoaImpresso = gerarRelatorioPessoa();
+        	Relatorio.gerarRelatorioImpresso("temp/relatorio1_pessoa.txt", conteudoRelatorioPessoaImpresso);
+        	break;
+        case 2:
+        	String conteudoRelatorioSerieImpresso = gerarRelatorioSerie();
+        	Relatorio.gerarRelatorioImpresso("temp/relatorio2_serie.txt", conteudoRelatorioSerieImpresso);
+        	break;
+        case 3:
+        	return;
             default:
-                log.warning("Opcão inválida!");
+            	log.warning("Opção inválida!");
                 break;
         }
         log.info("\nPRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU PRINCIPAL: ");
